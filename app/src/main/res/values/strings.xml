@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CricMax</string>
+    <string name="live_matches">Live Matches</string>
+    <string name="upcoming_matches">Upcoming Matches</string>
 </resources>
