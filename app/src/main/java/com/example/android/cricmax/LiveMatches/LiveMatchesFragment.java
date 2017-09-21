@@ -64,7 +64,6 @@ public class LiveMatchesFragment extends Fragment {
     private class LiveMatchesHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView mSportDescription;
-        private TextView mSportId;
 
         public LiveMatchesHolder(LayoutInflater inflater, ViewGroup view) {
             super(inflater.inflate(R.layout.live_matches, view, false));
@@ -73,8 +72,6 @@ public class LiveMatchesFragment extends Fragment {
             mSportDescription = (TextView) itemView.findViewById(R.id.score_title);
 
         }
-
-
 
         private LiveMatches mScoreItems;
         public  void Bind(LiveMatches sports) {

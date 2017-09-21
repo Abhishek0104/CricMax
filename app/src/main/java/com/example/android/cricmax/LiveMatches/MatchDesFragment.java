@@ -1,26 +1,15 @@
 package com.example.android.cricmax.LiveMatches;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
-
 import com.example.android.cricmax.R;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import com.example.android.cricmax.URLFetcher.MatchDesFetcher;
 
 /**
  * Created by Abhishek on 21-09-2017.
@@ -29,7 +18,8 @@ import java.net.URL;
 public class MatchDesFragment extends Fragment {
     String mId;
     private static final String DES = "MatchDescription";
-    TextView mTextView;
+    TextView mTeamView, mScoreView, mStatView;
+
 
 
 
@@ -46,12 +36,31 @@ public class MatchDesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.match_des, container, false);
-        mTextView = view.findViewById(R.id.MatchId);
+        mTeamView = view.findViewById(R.id.TeamId);
+        mStatView = view.findViewById(R.id.StatId);
+        mScoreView = view.findViewById(R.id.ScoreId);
         mId = (String) getActivity().getIntent().getSerializableExtra(MatchDesActivity.TAG);
-        mTextView.setText(mId);
 
+
+        new FetchItemTask().execute();
 
         return view;
+    }
+
+
+    private class FetchItemTask extends AsyncTask<Void, Void, MatchDescription> {
+        @Override
+        protected MatchDescription doInBackground(Void... voids) {
+            return new MatchDesFetcher().fetchItems(mId);
+
+        }
+
+        @Override
+        protected void onPostExecute(MatchDescription matchDescription) {
+            mTeamView.setText(matchDescription.getTeam1() + " Vs. " + matchDescription.getTeam2());
+            mStatView.setText(matchDescription.getStat());
+            mScoreView.setText(matchDescription.getScore());
+        }
     }
 
 }
