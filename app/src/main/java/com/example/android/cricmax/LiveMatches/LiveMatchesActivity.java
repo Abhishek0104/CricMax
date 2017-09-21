@@ -9,6 +9,8 @@ import com.example.android.cricmax.FragmentGenerator;
  */
 
 public class LiveMatchesActivity extends FragmentGenerator {
+
+
     @Override
     protected Fragment createFragment() {
         return new LiveMatchesFragment();

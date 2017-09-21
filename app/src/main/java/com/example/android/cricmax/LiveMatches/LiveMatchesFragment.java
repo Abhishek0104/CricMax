@@ -1,5 +1,7 @@
 package com.example.android.cricmax.LiveMatches;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.cricmax.R;
 import com.example.android.cricmax.URLFetcher.URLFetcher;
@@ -27,6 +30,8 @@ public class LiveMatchesFragment extends Fragment {
     private LiveMatchesAdapter mLiveMatchesAdapter;
     private static final String TAG = "LiveMatches";
     private List<LiveMatches> mItems = new ArrayList<>();
+
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,7 +61,7 @@ public class LiveMatchesFragment extends Fragment {
         }
     }
 
-    private class LiveMatchesHolder extends RecyclerView.ViewHolder {
+    private class LiveMatchesHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView mSportDescription;
         private TextView mSportId;
@@ -64,8 +69,9 @@ public class LiveMatchesFragment extends Fragment {
         public LiveMatchesHolder(LayoutInflater inflater, ViewGroup view) {
             super(inflater.inflate(R.layout.live_matches, view, false));
 
+            itemView.setOnClickListener(this);
             mSportDescription = (TextView) itemView.findViewById(R.id.score_title);
-            mSportId = (TextView) itemView.findViewById(R.id.score_id);
+
         }
 
 
@@ -74,10 +80,15 @@ public class LiveMatchesFragment extends Fragment {
         public  void Bind(LiveMatches sports) {
             mScoreItems = sports;
             mSportDescription.setText(mScoreItems.getTitle());
-            mSportId.setText(mScoreItems.getId());
+
         }
 
 
+        @Override
+        public void onClick(View view) {
+            Intent intent = MatchDesActivity.newIntent(getActivity(), mScoreItems.getId());
+            startActivity(intent);
+        }
     }
 
 
