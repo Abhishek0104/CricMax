@@ -22,6 +22,9 @@
         <activity android:name=".LiveMatches.MatchDesActivity">
 
         </activity>
+        <activity android:name=".PlayerStats.PlayerStatsListActivity">
+
+        </activity>
     </application>
 
 </manifest>

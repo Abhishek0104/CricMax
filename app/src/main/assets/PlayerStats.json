@@ -1,0 +1,69 @@
+{
+  "stats": [
+    {
+      "name": "Sachin Tendulkar",
+      "id": "35320",
+      "image": "http://cricapi.com/playerpic/35320.jpg"
+    },
+    {
+      "name": "MS Dhoni",
+      "id": "28081",
+      "image": "https://cricapi.com/playerpic/28081.jpg"
+    },
+    {
+      "name": "Virat Kohli",
+      "id": "253802",
+      "image": "https://cricapi.com/playerpic/253802.jpg"
+    },
+    {
+      "name": "Rohit Sharma"  ,
+      "id":  "924355"   ,
+      "image": "https://cricapi.com/playerpic/924355.jpg"
+    },
+    {
+      "name": "Shikhar Dhawan"  ,
+      "id":   "28235"  ,
+      "image": "https://cricapi.com/playerpic/28235.jpg"
+    },
+    {
+      "name": "Ravindra Jadeja"  ,
+      "id":   "234675"  ,
+      "image": "http://cricapi.com/playerpic/234675.jpg"
+    },
+    {
+      "name": "Jasprit Bumrah"  ,
+      "id":   "625383"  ,
+      "image": "https://cricapi.com/playerpic/625383.jpg"
+    },
+    {
+      "name": "Bhuvneshwar Kumar"  ,
+      "id":  "326016"   ,
+      "image": "https://cricapi.com/playerpic/326016.jpg"
+    },
+    {
+      "name": "Hardik Pandya"  ,
+      "id":   "625371"  ,
+      "image": "http://cricapi.com/playerpic/625371.jpg"
+    },
+    {
+      "name": "Ajinkya Rahane"  ,
+      "id":   "277916"  ,
+      "image": "http://cricapi.com/playerpic/277916.jpg"
+    },
+    {
+      "name": "Steven Smith"  ,
+      "id":   "267192"  ,
+      "image": "http://cricapi.com/playerpic/267192.jpg"
+    },
+    {
+      "name": "David Warner"  ,
+      "id":   "219889"  ,
+      "image": "https://cricapi.com/playerpic/219889.jpg"
+    },
+    {
+      "name":  "Glenn Maxwell" ,
+      "id":   "325026"  ,
+      "image": "https://cricapi.com/playerpic/325026.jpg"
+    }
+  ]
+}

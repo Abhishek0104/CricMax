@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.android.cricmax.LiveMatches.LiveMatchesActivity;
+import com.example.android.cricmax.PlayerStats.PlayerStatsListActivity;
 
 /**
  * Created by Abhishek on 10-09-2017.
@@ -18,6 +19,7 @@ import com.example.android.cricmax.LiveMatches.LiveMatchesActivity;
 public class HomePageFragment extends Fragment {
 
     Button mLiveMatchesBtn;
+    Button mPlayerStatsBtn;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,11 +33,19 @@ public class HomePageFragment extends Fragment {
         View view = inflater.inflate(R.layout.home_page, container, false);
 
         mLiveMatchesBtn = view.findViewById(R.id.live_matches_btn);
+        mPlayerStatsBtn = view.findViewById(R.id.player_stat_btn);
 
         mLiveMatchesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), LiveMatchesActivity.class);
+                startActivity(intent);
+            }
+        });
+        mPlayerStatsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), PlayerStatsListActivity.class);
                 startActivity(intent);
             }
         });
