@@ -61,13 +61,14 @@ public class PlayerStatsListFragment extends Fragment {
         }
     }
 
-    private class PlayerStatHolder extends RecyclerView.ViewHolder {
+    private class PlayerStatHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView mPlayerName;
 
         public PlayerStatHolder(LayoutInflater inflater, ViewGroup view){
             super(inflater.inflate(R.layout.player_list, view, false));
 
+            itemView.setOnClickListener(this);
             mPlayerName = (TextView) itemView.findViewById(R.id.player_name_view);
         }
 
@@ -77,6 +78,12 @@ public class PlayerStatsListFragment extends Fragment {
         public void Bind(Player player){
             mPlayerView = player;
             mPlayerName.setText(mPlayerView.getName());
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = PlayerActivity.newIntent(getActivity(), mPlayerView.getId());
+            startActivity(intent);
         }
     }
 
